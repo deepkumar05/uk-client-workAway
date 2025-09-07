@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss";
 export default {
 	darkMode: ["class"],
 	content: [
-		"./pages/*/.{ts,tsx}",
-		"./components/*/.{ts,tsx}",
-		"./app/*/.{ts,tsx}",
-		"./src/*/.{ts,tsx}",
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}",
 	],
 	prefix: "",
 	theme: {
@@ -26,7 +26,9 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,21 +54,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// WorkAway Admin Theme Colors
-				workaway: {
-					blue: 'hsl(var(--workaway-blue))',
-					'blue-light': 'hsl(var(--workaway-blue-light))',
-					'blue-dark': 'hsl(var(--workaway-blue-dark))'
-				},
-				status: {
-					ready: 'hsl(var(--status-ready))',
-					active: 'hsl(var(--status-active))',
-					expiring: 'hsl(var(--status-expiring))',
-					pending: 'hsl(var(--status-pending))'
-				},
+				// Role-based semantic colors - 6 portals
+				"uk-client": "hsl(var(--uk-client))",
+				admin: "hsl(var(--admin))",
+				supplier: "hsl(var(--supplier))",
+				"delivery-manager": "hsl(var(--delivery-manager))",
+				"india-ops": "hsl(var(--india-ops))",
+				"uk-coordinator": "hsl(var(--uk-coordinator))",
+				// Status colors
 				success: 'hsl(var(--success))',
 				warning: 'hsl(var(--warning))',
-				info: 'hsl(var(--info))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -77,6 +74,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)',
+				'primary': 'var(--shadow-primary)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -99,50 +107,11 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				'fade-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(10px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
-				'slide-in': {
-					'0%': { 
-						transform: 'translateX(-100%)',
-						opacity: '0'
-					},
-					'100%': { 
-						transform: 'translateX(0)',
-						opacity: '1'
-					}
-				},
-				'pulse-glow': {
-					'0%, 100%': { 
-						boxShadow: '0 0 5px hsl(var(--primary))'
-					},
-					'50%': { 
-						boxShadow: '0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))'
-					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out',
-				'slide-in': 'slide-in 0.4s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
-			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-card': 'var(--gradient-card)'
-			},
-			boxShadow: {
-				'card': 'var(--shadow-card)',
-				'elevated': 'var(--shadow-elevated)'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
